@@ -1,0 +1,26 @@
+{
+  "name": "esd-contract",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "repository": "https://github.com/Spiderpowa/esd-contract",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "postinstall": "go get github.com/ethereum/go-ethereum/cmd/abigen",
+    "compile": "cd vendor/dollar/protocol; truffle compile",
+    "abigen": "jq '.abi' vendor/dollar/protocol/build/contracts/Implementation.json > build/Implementation.abi; abigen --abi build/Implementation.abi --pkg esd --out contract.go"
+  },
+  "author": "Jimmy Hu",
+  "license": "MIT",
+  "dependencies": {
+    "node-jq": "^1.11.3",
+    "truffle": "^5.1.53",
+    "truffle-privatekey-provider": "^1.5.0",
+    "@openzeppelin/contracts": "^2.5.0",
+    "@openzeppelin/upgrades": "^2.8.0",
+    "@uniswap/lib": "^1.1.2",
+    "@uniswap/v2-core": "^1.0.1"
+  }
+}

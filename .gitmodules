@@ -1,0 +1,3 @@
+[submodule "vendor/dollar"]
+	path = vendor/dollar
+	url = https://github.com/emptysetsquad/dollar
